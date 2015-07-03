@@ -43,8 +43,8 @@ h4 {
 }
 
 h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
+  /* padding:10px; */
+  /* padding-left: 5%; */
   padding-right: 5%;
 }
 
@@ -109,6 +109,11 @@ a {
   padding-bottom: 10px;
   clear:both;
 }
+
+.onlineclassesheading {
+  padding-top: 20px
+}
+
 
 .dark-gray {
   background-color: #4A4A4A;
@@ -212,4 +217,9 @@ span {
   .biopic {
     display: block;
   }
+}
+
+.imagestyle {
+  max-width: 200px;
+  max-height: 200px;
 }
