@@ -14,9 +14,9 @@ var bio = {
 	},
 	"skills": ["JavaScript","Analysis","UX","Project Management"],
 	"biopic": "images/aaronsquelch.jpg"
-}
+};
 
-displayBio()
+
 
 // THIS DOESN'T WORK DESPITE MIMICING CODE FROM TUTORIAL
 //function inName(name) {
@@ -49,9 +49,9 @@ var work = {
 		"description": "Being awesome in South Korea!"
 	}
 	]
-}
+};
 
-displayWork()
+
 
 // Projects
 var projects = {
@@ -72,9 +72,9 @@ var projects = {
 		"image": ["images/C.jpg"]
 	}
 	]
-}
+};
 
-displayProjects()
+
 
 //Education
 var education = {
@@ -97,13 +97,9 @@ var education = {
 		"onlineURL": "udacity.com"
 	}
 	]
-}
+};
 
-displayeducation()
-
-
-
-function displayBio() {
+bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	$("#header").prepend(formattedName);
 	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -132,9 +128,11 @@ function displayBio() {
 		var formattedSkills = HTMLskills.replace("%data%", bio.skills[skill]);
 		$("#skills:last").append(formattedSkills);
 	}
-}
+};
 
-function displayeducation() {
+bio.display();
+
+education.display = function() {
 
 	for (school in education.schools) {
 		$("#education").append(HTMLschoolStart);
@@ -170,7 +168,9 @@ function displayeducation() {
 	}
 }
 
-function displayProjects() {
+education.display();
+
+projects.display = function() {
 
 	for (project in projects.projects) {
 
@@ -192,7 +192,9 @@ function displayProjects() {
 	}
 }
 
-function displayWork() {
+projects.display();
+
+work.display = function() {
 
 	for (job in work.jobs) {
 		$("#workExperience").append(HTMLworkStart);
@@ -211,5 +213,7 @@ function displayWork() {
 		$(".work-entry:last").append(formattedWorkdescription);
 	}
 }
+
+work.display();
 
 $("#mapDiv").append(googleMap);
