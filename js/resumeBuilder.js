@@ -1,26 +1,35 @@
 
-$(document).click(function(loc) {
-  var x = loc.pageX;
-  var y = loc.pageY;
-  logClicks(x,y);
-});
 
 // Header
-var bio = {}
-	bio.name = "Aaron Squelch",
-	bio.role = "Senior Business Analyst",
-	bio.welcomeMsg = "Aaron is a passionate and design focused analyst with extensive experience in large transformational projects.",
-	bio.contacts = {
+var bio = {
+	"name": "Aaron Squelch",
+	"role": "Senior Business Analyst",
+	"welcomeMsg": "Aaron is a passionate and design focused analyst with extensive experience in large transformational projects.",
+	"contacts": {
 		"mobile": "9999 999 999",
 		"email": "aaronsquelch@gmail.com",
 		"twitter": "hcleuqs",
 		"github" : "github.com/asquelch",
 		"location": "Melbourne"
 	},
-	bio.skills = ["JavaScript","Analysis","UX","Project Management"]
-	bio.biopic = "images/aaronsquelch.jpg"
+	"skills": ["JavaScript","Analysis","UX","Project Management"],
+	"biopic": "images/aaronsquelch.jpg"
+}
 
 displayBio()
+
+// THIS DOESN'T WORK DESPITE MIMICING CODE FROM TUTORIAL
+//function inName(name) {
+//  name = name.trim().spilt(" ");
+//  console.log(name);
+//  name[1] = name[1].toUpperCase();
+//  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+//
+//  return name[0]+" "+name[1];
+//}
+ 
+// $("#main").append(internationalizeButton);
+
 
 // Work Experience
 var work = {
@@ -33,11 +42,11 @@ var work = {
 		"description": "Description" 
 	},
 	{
-		"employer": "Australian Taxation Office",
+		"employer": "Korea awesomeness",
 		"title": "Business Analyst",
-		"location": "Melbourne, Australia",
+		"location": "Seoul, South Korea",
 		"dates": "2009 - 2012",
-		"description": "Description"
+		"description": "Being awesome in South Korea!"
 	}
 	]
 }
@@ -201,5 +210,6 @@ function displayWork() {
 		$(".work-entry:last").append(formattedWorklocation);
 		$(".work-entry:last").append(formattedWorkdescription);
 	}
-
 }
+
+$("#mapDiv").append(googleMap);
